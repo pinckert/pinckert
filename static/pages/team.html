@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Global Includes -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Local Includes -->
+    <link href="../legacy/team.css" rel="stylesheet">
+    <script src="../data/cue-chaos-8.js"></script>
+    <script src="../legacy/sessionUtil.js"></script>
+    <script src="../legacy/DOMUtil.js"></script>
+
+    <title>Team Performance Over Time</title>
+    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="../css/app-shell.css" rel="stylesheet">
+    <link href="../css/team.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/dashboard-charts.js"></script>
+    <script type="text/javascript" src="../js/dashboard-tables.js"></script>
+    <script type="text/javascript" src="../js/team.js"></script>
+    <script type="text/javascript" src="../js/app-shell.js" defer></script>
+</head>
+<body>
+    <nav class="app-shell-topbar" aria-label="Main navigation">
+        <div class="app-shell-inner">
+            <div class="app-shell-brand">
+                <div class="app-shell-mark" aria-hidden="true">8</div>
+                <div>
+                    <p class="app-shell-title">Cue Chaos / Cue-Tastrophe Analytics</p>
+                    <p class="app-shell-subtitle">APA billiards performance dashboard</p>
+                </div>
+            </div>
+            <div class="app-shell-nav">
+                <a href="../index.html">Dashboard</a>
+                <a href="individual8.html">8-Ball Players</a>
+                <a href="opponents8.html">8-Ball Opponents</a>
+                <a href="individual9.html">9-Ball Players</a>
+                <a href="opponents9.html">9-Ball Opponents</a>
+                <a href="team.html">Team History</a>
+            </div>
+        </div>
+    </nav>
+    <div class="app-breadcrumbs"><a href="../index.html">Dashboard</a><span>›</span>Team<span>›</span><strong>Performance History</strong></div>
+
+    <main class="dashboard-shell team-dashboard">
+        <section class="dashboard-hero team-hero">
+            <div>
+                <p class="eyebrow">8-Ball Team History</p>
+                <h1>Team Performance Over Time</h1>
+                <p>Season-by-season overview of match record, point scoring, strength of schedule, and recent form.</p>
+            </div>
+            <div class="hero-badge">
+                <strong id="metricSessions">--</strong>
+                <span>Tracked Sessions</span>
+            </div>
+        </section>
+
+        <section class="metric-grid team-metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">Team matches</div>
+                <div class="metric-value" id="metricMatches">--</div>
+                <div class="metric-subtext">Completed team matches</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Match record</div>
+                <div class="metric-value" id="metricRecord">--</div>
+                <div class="metric-subtext" id="metricWinPct">--</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Total points</div>
+                <div class="metric-value" id="metricPoints">--</div>
+                <div class="metric-subtext" id="metricPointMargin">--</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Current trend</div>
+                <div class="metric-value" id="metricRecentTrend">--</div>
+                <div class="metric-subtext">Last five team matches</div>
+            </div>
+        </section>
+
+        <section class="dashboard-card season-overview-card">
+            <div class="card-header">
+                <div>
+                    <h2>Season Snapshot</h2>
+                    <span>Fast comparison of each available session.</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="seasonCards" class="season-card-grid"></div>
+            </div>
+        </section>
+
+        <section class="dashboard-card">
+            <div class="card-header">
+                <div>
+                    <h2>Season Performance Trends</h2>
+                    <span>How scoring and results are changing from session to session.</span>
+                </div>
+            </div>
+            <div class="card-body chart-grid">
+                <div id="recordChart" class="chart-box"></div>
+                <div id="marginChart" class="chart-box"></div>
+                <div id="pointsChart" class="chart-box"></div>
+                <div id="strengthChart" class="chart-box"></div>
+            </div>
+        </section>
+
+        <section class="dashboard-card">
+            <div class="card-header">
+                <div>
+                    <h2>Recent Team Matches</h2>
+                    <span>Compact match history with season, opponent, score, and handicap context.</span>
+                </div>
+            </div>
+            <div class="card-body" id="recentMatchesTable"></div>
+        </section>
+
+        <section class="dashboard-card">
+            <div class="card-header">
+                <div>
+                    <h2>Season Details</h2>
+                    <span>Numeric detail behind the charts.</span>
+                </div>
+            </div>
+            <div class="card-body" id="seasonSummaryTable"></div>
+        </section>
+    </main>
+</body>
+</html>

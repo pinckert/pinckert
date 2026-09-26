@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Itchin' ta Scratch Analytics</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/app-shell.css" rel="stylesheet">
+    <script src="js/app-shell.js" defer></script>
+</head>
+<body class="landing-page">
+    <nav class="app-shell-topbar" aria-label="Main navigation">
+        <div class="app-shell-inner">
+            <div class="app-shell-brand">
+                <div class="app-shell-mark" aria-hidden="true">8</div>
+                <div>
+                    <p class="app-shell-title">Itchin' ta Scratch Analytics</p>
+                    <p class="app-shell-subtitle">APA billiards performance dashboard</p>
+                </div>
+            </div>
+            <div class="app-shell-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="pages/individual8.html">8-Ball Players</a>
+                <a href="pages/opponents8.html">8-Ball Opponents</a>
+                <a href="pages/individual9.html">9-Ball Players</a>
+                <a href="pages/opponents9.html">9-Ball Opponents</a>
+                <a href="pages/team.html">Team History</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <section class="landing-hero">
+            <p class="landing-kicker">Team dashboard</p>
+            <h1 class="landing-title">Itchin' ta Scratch<br>Analytics</h1>
+            <p class="landing-copy">
+                A single front door for the team’s APA 8-ball and 9-ball reports: player trends,
+                opponent history, session summaries, and long-term team performance.
+            </p>
+            <div class="landing-actions">
+                <a class="landing-action" href="pages/individual8.html"><span class="material-icons">person_search</span> Open 8-Ball Players</a>
+                <a class="landing-action secondary" href="pages/team.html"><span class="material-icons">query_stats</span> View Team History</a>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Application overview">
+            <div class="metric-card">
+                <p class="metric-label">Game formats</p>
+                <p class="metric-value">2</p>
+            </div>
+            <div class="metric-card">
+                <p class="metric-label">Report pages</p>
+                <p class="metric-value">5</p>
+            </div>
+            <div class="metric-card">
+                <p class="metric-label">Dashboard mode</p>
+                <p class="metric-value">Live</p>
+            </div>
+            <div class="metric-card">
+                <p class="metric-label">Data source</p>
+                <p class="metric-value">APA</p>
+            </div>
+        </section>
+
+        <h2 class="report-section-title">Choose a report</h2>
+        <section class="game-column-grid">
+            <div class="game-column">
+                <h2>8-Ball</h2>
+                <div class="report-grid">
+                    <a class="report-card" href="pages/individual8.html">
+                        <span class="report-icon material-icons">groups</span>
+                        <h3>Player Performance</h3>
+                        <p>Individual player results, session summaries, trends, match history, and chart drill-downs.</p>
+                        <span class="report-meta"><span class="report-pill">Players</span><span class="report-pill">Charts</span><span class="report-pill">Sessions</span></span>
+                    </a>
+                    <a class="report-card" href="pages/opponents8.html">
+                        <span class="report-icon material-icons">shield</span>
+                        <h3>Opponent Analysis</h3>
+                        <p>Head-to-head team results grouped by opponent, with accordion sections and quick navigation.</p>
+                        <span class="report-meta"><span class="report-pill">Opponents</span><span class="report-pill">Matchups</span><span class="report-pill">Accordion</span></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-column">
+                <h2>9-Ball</h2>
+                <div class="report-grid">
+                    <a class="report-card" href="pages/individual9.html">
+                        <span class="report-icon material-icons">person</span>
+                        <h3>Player Performance</h3>
+                        <p>The same individual dashboard experience adapted to 9-ball scoring, ranks, and point totals.</p>
+                        <span class="report-meta"><span class="report-pill">9-Ball</span><span class="report-pill">Players</span><span class="report-pill">Trends</span></span>
+                    </a>
+                    <a class="report-card" href="pages/opponents9.html">
+                        <span class="report-icon material-icons">sports_score</span>
+                        <h3>Opponent Analysis</h3>
+                        <p>9-ball head-to-head opponent tables using the shared dashboard styling and score coloring.</p>
+                        <span class="report-meta"><span class="report-pill">9-Ball</span><span class="report-pill">Opponents</span><span class="report-pill">Scores</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="report-section-title">Team-level view</h2>
+        <section class="report-grid">
+            <a class="report-card" href="pages/team.html">
+                <span class="report-icon material-icons">timeline</span>
+                <h3>Team Performance History</h3>
+                <p>Season-over-season points, finish, ranking, venue summaries, innings trends, and handicap relationship charts.</p>
+                <span class="report-meta"><span class="report-pill">History</span><span class="report-pill">Sessions</span><span class="report-pill">Team trends</span></span>
+            </a>
+        </section>
+
+        <section class="dashboard-note">
+            <strong>Project structure:</strong> This landing page uses the shared application shell. The report pages keep their specialized logic,
+            but share dashboard styling, navigation, table helpers, and a common visual language.
+        </section>
+    </main>
+</body>
+</html>

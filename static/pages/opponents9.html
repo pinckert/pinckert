@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Opponents.html
+
+        List match results based on teams played/individuals played.
+
+        Known bugs:
+            Doesn't handle ',' or '&' in team names (handles spaces).
+    -->
+
+    <meta name="google" content="notranslate">   <!-- For some reason the page triggers the google translate popup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  Global includes  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Local Includes  -->
+    <link href="../legacy/team.css" rel="stylesheet">
+    <link href="../legacy/opponents9.css" rel="stylesheet">
+	<script type="text/javascript" src="../legacy/DOMUtil.js"></script>   	<!-- DOM helper functions -->
+    <script type="text/javascript" src="../data/cue-tastrophe-9.js"></script>   	<!--Raw match data-->
+    <script type="text/javascript" src="../legacy/sessionUtil.js"></script>	<!--General definitions (both 8/9 ball) -->
+
+    <title>Cue-Tastrophe - results by opponent</title>
+    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="../css/app-shell.css" rel="stylesheet">
+    <link href="../css/opponents9.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/dashboard-tables.js"></script>
+    <script type="text/javascript" src="../js/opponents9.js"></script>
+    <script type="text/javascript" src="../js/app-shell.js" defer></script>
+</head>
+
+<body>
+    <nav class="app-shell-topbar" aria-label="Main navigation">
+        <div class="app-shell-inner">
+            <div class="app-shell-brand">
+                <div class="app-shell-mark" aria-hidden="true">8</div>
+                <div>
+                    <p class="app-shell-title">Cue-Tastrophe Analytics</p>
+                    <p class="app-shell-subtitle">APA billiards performance dashboard</p>
+                </div>
+            </div>
+            <div class="app-shell-nav">
+                <a href="../index.html">Dashboard</a>
+                <a href="individual8.html">8-Ball Players</a>
+                <a href="opponents8.html">8-Ball Opponents</a>
+                <a href="individual9.html">9-Ball Players</a>
+                <a href="opponents9.html">9-Ball Opponents</a>
+                <a href="team.html">Team History</a>
+            </div>
+        </div>
+    </nav>
+    <div class="app-breadcrumbs"><a href="../index.html">Dashboard</a><span>›</span>9-Ball<span>›</span><strong>Opponent Analysis</strong></div>
+
+<div class="app-shell">
+		<header class="hero">
+			<img src="../images/cue_tastrophe.jpg" id="teamImage-ID" class="team-logo" alt="cue-tastrophe">
+			<div>
+				<p class="hero-kicker">Cue-Tastrophe</p>
+				<h1 class="hero-title">9-ball performance against opponents</h1>
+				<p class="hero-subtitle">Compare player results by opposing team, session range, and ordering preference.</p>
+			</div>
+		</header>
+
+		<div id="header" class="control-panel">
+			<div class="control-grid">
+				<section class="control-card">
+					<h2 class="control-title"><span class="material-icons" aria-hidden="true">sort</span>Order players by</h2>
+					<div class="radio-stack">
+						<label><input type="radio" class="select" name="select" onclick="enhancedSwapTables(0)" checked="checked">Opponent</label>
+						<label><input type="radio" class="select" name="select" onclick="enhancedSwapTables(1)">Team Member</label>
+					</div>
+				</section>
+
+				<section class="control-card">
+					<h2 class="control-title"><span class="material-icons" aria-hidden="true">date_range</span>Limit Sessions</h2>
+					<div class="session-fields">
+						<div class="session-field-row">
+							<label for="startingSession">From</label>
+							<select id="startingSession" onChange="handleSessionSelect(1)" class="userInput"></select>
+						</div>
+						<div class="session-field-row">
+							<label for="endingSession">To</label>
+							<select id="endingSession" onChange="handleSessionSelect(0)" class="userInput"></select>
+						</div>
+					</div>
+				</section>
+
+				<section class="control-card">
+					<h2 class="control-title"><span class="material-icons" aria-hidden="true">groups</span>Team Select</h2>
+					<div class="team-link-wrap">
+						<div class="Header" id="oppLinks"></div>
+						<div class="Header" id="teamLinks" style="visibility:collapse"></div>
+					</div>
+				</section>
+			</div>
+
+			<div class="dashboard-tools" aria-label="Dashboard tools">
+				<div class="search-wrap">
+					<span class="material-icons" aria-hidden="true">search</span>
+					<input id="tableSearch" type="search" placeholder="Search all visible teams by player, rank, date, or score" aria-label="Search all visible team results">
+				</div>
+				<button type="button" class="dashboard-button" onclick="resetDashboardFilters()">Reset</button>
+				<button type="button" class="dashboard-button" onclick="setAllTeamSections(false)">Expand All</button>
+				<button type="button" class="dashboard-button" onclick="setAllTeamSections(true)">Collapse All</button>
+				<div id="resultStatus" aria-live="polite">0 teams shown</div>
+			</div>
+		</div>
+
+		<section class="summary-cards" aria-label="Summary">
+			<div class="summary-card"><p class="summary-label">Open teams</p><p class="summary-value" id="summaryTeams">0</p></div>
+			<div class="summary-card"><p class="summary-label">Player rows</p><p class="summary-value" id="summaryPlayers">0</p></div>
+			<div class="summary-card"><p class="summary-label">Current view</p><p class="summary-value" id="summaryView">Opponent</p></div>
+			<div class="summary-card"><p class="summary-label">Sessions</p><p class="summary-value" id="summarySessions">All</p></div>
+		</section>
+
+		<!-- Results tables sorted by opponent team members and home team respectively -->
+		<main class="table-fade">
+			<div class="Chart" id="opponentChart">
+				<table class="TeamTable" id="oppTable"><thead><tr><th>Opposing Team</th></tr></thead></table>
+			</div>
+
+			<div class="Chart" id="teamChart">
+				<table class="TeamTable" id="teamTable"><thead><tr><th>Opposing Team</th></tr></thead></table>
+			</div>
+			<div class="no-results" id="noResults">No matching teams or players found.</div>
+		</main>
+	</div>
+</body>
+</html>

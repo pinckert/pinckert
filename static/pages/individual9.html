@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Individual 9-ball Performance Charts</title>
+
+    <!-- External includes -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Local includes -->
+    <link href="../legacy/team.css" rel="stylesheet">
+    <link href="../legacy/individual.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="../css/app-shell.css" rel="stylesheet">
+    <link href="../css/individual9.css" rel="stylesheet">
+<!-- App scripts -->
+    <script type="text/javascript" src="../data/cue-tastrophe-9.js"></script>
+    <script type="text/javascript" src="../legacy/sessionUtil.js"></script>
+    <script type="text/javascript" src="../legacy/DOMUtil.js"></script>
+    <script type="text/javascript" src="../js/app-shell.js" defer></script>
+</head>
+<body>
+    <nav class="app-shell-topbar" aria-label="Main navigation">
+        <div class="app-shell-inner">
+            <div class="app-shell-brand">
+                <div class="app-shell-mark" aria-hidden="true">8</div>
+                <div>
+                    <p class="app-shell-title">Cue-tastrophe Analytics</p>
+                    <p class="app-shell-subtitle">APA billiards performance dashboard</p>
+                </div>
+            </div>
+            <div class="app-shell-nav">
+                <a href="../index.html">Dashboard</a>
+                <a href="individual8.html">8-Ball Players</a>
+                <a href="opponents8.html">8-Ball Opponents</a>
+                <a href="individual9.html">9-Ball Players</a>
+                <a href="opponents9.html">9-Ball Opponents</a>
+                <a href="team.html">Team History</a>
+            </div>
+        </div>
+    </nav>
+    <div class="app-breadcrumbs"><a href="../index.html">Dashboard</a><span>›</span>9-Ball<span>›</span><strong>Individual Performance</strong></div>
+
+    <script type="text/javascript" src="../js/game-config.js"></script>
+    <script type="text/javascript" src="../js/dashboard-charts.js"></script>
+    <script type="text/javascript" src="../js/dashboard-tables.js"></script>
+    <script type="text/javascript" src="../js/individual9.js"></script>
+<div class="dashboard-container">
+        <header class="app-header">
+            <div class="brand-block">
+                <img src="../images/cue_tastrophe.jpg" class="brand-logo" alt="Cue-tastrophe">
+                <div>
+                    <h1 class="app-title">Cue-tastrophe</h1>
+                    <p class="app-subtitle">Individual 9-ball player performance dashboard</p>
+                </div>
+            </div>
+            <img src="../images/9-ball.jpg" class="game-logo" alt="9-ball">
+        </header>
+
+        <section class="control-panel" aria-label="Dashboard controls">
+            <div class="control-grid">
+                <div>
+                    <p class="control-section-title">Show charts for players</p>
+                    <div id="members" class="player-filter-list"></div>
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <button onclick="togglePlayerSelect(0)">Uncheck All</button>
+                        <button type="button" onclick="togglePlayerSelect(1)">Check All</button>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="control-section-title">Session Select</p>
+                    <div class="session-controls">
+                        <label class="field-group">
+                            From Session
+                            <select id="startingSession"></select>
+                        </label>
+                        <label class="field-group">
+                            To Session
+                            <select id="endingSession"></select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main id="main-ID"></main>
+
+    <template>
+        <div>
+            <div class="player-card-header">
+                <h3></h3>
+                <span class="player-pill">Player</span>
+            </div>
+            <div class="player-card-body">
+                <table class="chart-grid">
+                    <tr><th>Matches by opponent level</th><th>Total games by opponent level</th></tr>
+                    <tr><td id="matches-ID" class="graph"></td><td id="games-ID" class="graph"></td></tr>
+                    <tr class="hide"><td id="matchesDetails-ID" colspan="2"></td></tr>
+
+                    <tr><th>Matches by result</th><th>Match result over time</th></tr>
+                    <tr><td id="result-ID" class="graph"></td><td id="rank-ID" class="graph"></td></tr>
+                    <tr class="hide"><td id="resultDetails-ID" class="detailTable"></td><td id="rankDetails-ID" class="detailTable"></td></tr>
+                </table>
+
+                <div id="details-ID" class="dashboard-table-host"></div>
+                <h2 class="table-section-title">Session Summary</h2>
+                <div id="summary-ID" class="summaryTable"></div>
+            </div>
+        </div>
+    </template>
+    </div>
+
+</body>
+</html>

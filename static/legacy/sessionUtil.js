@@ -12,7 +12,7 @@ const startingRank = 3; // default starting rank for new players
 const sessionOrder = { 'Spring': 0, 'Summer': 1, 'Fall': 2 };
 const pointsRequired = [14, 19, 25, 31, 38, 46, 55, 65, 75];
 const inactivePlayers = [];
-const teamName = 'Itchin to Scratch';
+const teamName = 'Cue Chaos';
 const team = {
     'Dean Pinckert': 94211255,
     'Johnson Lau': 94205033,

@@ -83,7 +83,8 @@ const currentSession =
 				{ player: 'Ammoron Andrus',	    result: [4,16], pf: 28, pa: 46, rank: 7, oppRank: 6, opponent: 'Joshua Newman' },
 				{ player: 'Aimee Wood',      	result: [4,16], pf: 10, pa: 31, rank: 2, oppRank: 4, opponent: 'Amber Trammell' },
 			]
-		},		{
+		},
+		{
 			date: '2026/09/24',
 			get linkedDate() { return linkDate(this.date, this.APALink) },
 			place: 'Jointed Cue Billiards',
@@ -95,6 +96,33 @@ const currentSession =
 				{ player: 'Dean Pinckert',      result: [6,14], pf: 23, pa: 31, rank: 4, oppRank: 4, opponent: 'Cynthia Currie' },
 				{ player: 'Maria Fogle',		result: [15,5], pf: 12, pa: 25, rank: 2, oppRank: 3, opponent: 'Karyn Baker' },
 				{ player: 'Johnson Lau',	    result: [5,15], pf: 34, pa: 46, rank: 7, oppRank: 6, opponent: 'Ronald Hubbartt' },
+			]
+		},
+		{
+			date: '2026/10/01',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Cue Crew',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634433',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Kimberly Lucchesi', result: [7, 13], pf: 25, pa: 31, rank: 4, oppRank: 4, opponent: 'Grace Kennedy' },
+				{ player: 'Dean Pinckert', result: [6, 14], pf: 24, pa: 31, rank: 4, oppRank: 4, opponent: 'Trang Nguyen' },
+				{ player: 'Maria Fogle', result: [7,13], pf: 16, pa: 19, rank: 2, oppRank: 2, opponent: 'Jennifer Blanchard' },
+				{ player: 'Ammoran Andrus', result: [3,17], pf: 20, pa: 46, rank: 6, oppRank: 6, opponent: 'Bob Randolph' },
+			]
+		},
+		{
+			date: '2026/10/08',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Nice Shot',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634436',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [13,7], pf: 31, pa: 25, rank: 4, oppRank: 4, opponent: 'Thomas FUnk' },
+				{ player: 'Aimee Wood', result: [12,8], pf: 19, pa: 23, rank: 2, oppRank: 3, opponent: 'Kimberly Gudino' },
+				{ player: 'Johnson Lau', result: [8, 12], pf: 53, pa: 75, rank: 7, oppRank: 9, opponent: 'Cody Seegert' },
 			]
 		},
 	]

@@ -125,6 +125,51 @@ const currentSession =
 				{ player: 'Johnson Lau', result: [8, 12], pf: 53, pa: 75, rank: 7, oppRank: 9, opponent: 'Cody Seegert' },
 			]
 		},
+						{
+			date: '2026/10/15',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Big Win Energy!',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634438',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [14,6], pf: 31, pa: 14, rank: 4, oppRank: 2, opponent: 'Vincent Walker' },
+				{ player: 'Aimee Wood', result: [6,14], pf: 14, pa: 19, rank: 2, oppRank: 2, opponent: 'Antoine Dunn' },
+				{ player: 'Robert Valim', result: [4,16], pf: 26, pa: 65, rank: 6, oppRank: 8, opponent: 'Brandon Gilham' },
+				{ player: 'Ammoron Andrus', result: [18, 2], pf: 46, pa: 11, rank: 6, oppRank: 4, opponent: 'Hasheem Whitmore' },
+				{ player: 'Kimberly Lucchesi', result: [12,8], pf: 31, pa: 29, rank: 4, oppRank: 4 , opponent: 'Drea Arnold' },
+			]
+		},
+				{
+			date: '2026/10/22',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Unusual Suspects',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634440',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [6,14], pf: 22, pa: 31, rank: 4, oppRank: 4, opponent: 'Jinny Hilderbrand' },
+				{ player: 'Aimee Wood', result: [8, 12], pf: 18, pa: 31, rank: 2, oppRank: 4, opponent: 'David Willer' },
+				{ player: 'Ammoron Andrus', result: [6,14], pf: 40, pa: 25, rank: 7, oppRank: 3, opponent: 'Calvin McGhie' },
+				{ player: 'Robert Valim', result: [17,3], pf: 46, pa: 13, rank: 6, oppRank: 4, opponent: 'Sam Macapagal' },
+				{ player: 'Kimberly Lucchesi', result: [14,6], pf: 31, pa: 19, rank: 4, oppRank: 3, opponent: 'Karen Hart' },
+			]
+		},
+						{
+			date: '2026/10/29',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'The Odd Balls',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634445',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [14,6], pf: 31, pa: 23, rank: 4, oppRank: 4, opponent: 'Brian McLemore' },
+				{ player: 'Aimee Wood', result: [12,8], pf: 19, pa: 34, rank: 2, oppRank: 5, opponent: 'Jason Ryan' },
+				{ player: 'Ammoron Andrus', result: [13,7], pf: 46, pa: 39, rank: 6, oppRank: 6, opponent: 'Ronald Hubbartt' },
+				{ player: 'Robert Valim', result: [12,8], pf: 46, pa: 37, rank: 6, oppRank: 5, opponent: 'Xavier Silva' },
+				{ player: 'Maria Fogle', result: [14,6], pf: 19, pa: 19, rank: 2, oppRank: 3, opponent: 'Karyn Baker' },
+			]
+		},
 	]
 }
 

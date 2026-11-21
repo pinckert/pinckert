@@ -155,7 +155,7 @@ const currentSession =
 				{ player: 'Kimberly Lucchesi', result: [14,6], pf: 31, pa: 19, rank: 4, oppRank: 3, opponent: 'Karen Hart' },
 			]
 		},
-						{
+		{
 			date: '2026/10/29',
 			get linkedDate() { return linkDate(this.date, this.APALink) },
 			place: 'Jointed Cue Billiards',
@@ -168,6 +168,50 @@ const currentSession =
 				{ player: 'Ammoron Andrus', result: [13,7], pf: 46, pa: 39, rank: 6, oppRank: 6, opponent: 'Ronald Hubbartt' },
 				{ player: 'Robert Valim', result: [12,8], pf: 46, pa: 37, rank: 6, oppRank: 5, opponent: 'Xavier Silva' },
 				{ player: 'Maria Fogle', result: [14,6], pf: 19, pa: 19, rank: 2, oppRank: 3, opponent: 'Karyn Baker' },
+			]
+		},
+				{
+			date: '2026/11/05',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Cue Crew',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634448',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [16,4], pf: 31, pa: 15, rank: 4, oppRank: 4, opponent: 'Mellisa Mitchell' },
+				{ player: 'Aimee Wood', result: [6,14], pf: 13, pa: 19, rank: 2, oppRank: 4, opponent: 'Grace Kennedy' },
+				{ player: 'Ammoron Andrus', result: [5,15], pf: 31, pa: 46, rank: 6, oppRank: 6, opponent: 'Bob Randolph' },
+				{ player: 'Robert Valim', result: [7,13], pf: 40, pa: 31, rank: 6, oppRank: 4, opponent: 'Trang Nguyen' },
+				{ player: 'Maria Fogle', result: [7,13], pf: 16, pa: 25, rank: 2, oppRank: 3, opponent: 'Melissa Radmand' },
+			]
+		},
+		{
+			date: '2026/11/12',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Nice Shot',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634451',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [13,7], pf: 31, pa: 21, rank: 4, oppRank: 3, opponent: 'David Cotto' },
+				{ player: 'Aimee Wood', result: [17,3], pf: 19, pa: 8, rank: 2, oppRank: 2, opponent: 'Andrea Ortega-Funk' },
+				{ player: 'Johnson Lau', result: [16,4], pf: 55, pa: 39, rank: 7, oppRank: 8, opponent: 'Cody Seegert' },
+				{ player: 'Laurie Lau', result: [7,13], pf: 27, pa: 31, rank: 4, oppRank: 4, opponent: 'Thomas Funk' },
+				{ player: 'Maria Fogle', result: [4,16], pf: 9, pa: 14, rank: 2, oppRank: 1, opponent: 'Toby McGilvray' },
+			]
+		},
+		{
+			date: '2026/11/19',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Big Win Energy!',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51634453',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Aimee Wood', result: [16,4], pf: 19, pa: 10, rank: 2, oppRank: 2, opponent: 'Antoine Dunn' },
+				{ player: 'Laurie Lau', result: [13,7], pf: 31, pa: 27, rank: 4, oppRank: 4, opponent: 'Drea Arnold' },
+				{ player: 'Johnson Lau', result: [12,8], pf: 55, pa: 61, rank: 7, oppRank: 8, opponent: 'Brandon Gilham' },
+				{ player: 'Maria Fogle', result: [12,8], pf: 19, pa: 18, rank: 2, oppRank: 2, opponent: 'Vincent Walker' },
 			]
 		},
 	]

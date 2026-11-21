@@ -51,7 +51,9 @@ const currentSession =
 				{ player: 'Dean Pinckert',		result: [2,0], pf: 2, pa: 1, rank: 3, oppRank: 4, opponent: 'Thomas Funk' },
 				{ player: 'Aimee Wood',      	result: [3,0], pf: 2, pa: 0, rank: 2, oppRank: 2, opponent: 'Toby McGilvray' },
 				{ player: 'Kimberly Lucchesi',	result: [0,2], pf: 2, pa: 4, rank: 5, oppRank: 5, opponent: 'Julian Duarte' },
-				{ player: 'Robert Valim',		result: [3,0], pf: 5, pa: 0, rank: 6, oppRank: 5, opponent: 'Kimberly Gudino' }
+				{ player: 'Robert Valim',		result: [3,0], pf: 5, pa: 0, rank: 6, oppRank: 5, opponent: 'Kimberly Gudino' },
+				{ player: 'Johnson Lau',		result: [0,2], pf: 1, pa: 5, rank: 7, oppRank: 7, opponent: 'Cody Seegert' }
+
 			]
 		},
 		{
@@ -137,7 +139,7 @@ const currentSession =
 			get score() { return format_score(sumMatches(this.matches)) },
 			matches: [
 				{ player: 'Dean Pinckert', result: [3,0], pf: 3, pa: 0, rank: 4, oppRank: 3, opponent: 'Vincent Walker' },
-				{ player: 'Aimee Wood', result: [2,0], pf: 2, pa: 1, rank: 2, oppRank: 2, opponent: 'Antoine Dunn' },
+				{ player: 'Aimee Wood', result: [2,0], pf: 2, pa: 1, rank: 2, oppRank: 2, opponent: 'Antione Dunn' },
 				{ player: 'Kimberly Lucchesi', result: [0, 2], pf: 2, pa: 3, rank: 5, oppRank: 4, opponent: 'Hasheem Whitmore' },
 				{ player: 'Johnson Lau', result: [0, 2], pf: 2, pa: 5, rank: 7, oppRank: 7, opponent: 'Brandon Gilham' },
 				{ player: 'Forfeit', result: [0, 2], pf: 0, pa: 0, rank: 0, oppRank: 0 , opponent: '' },
@@ -167,9 +169,56 @@ const currentSession =
 			get score() { return format_score(sumMatches(this.matches)) },
 			matches: [
 				{ player: 'Dean Pinckert', result: [2,0], pf: 3, pa: 1, rank: 4, oppRank: 5, opponent: 'Jason Ryan' },
-				{ player: 'Aimee Wood', result: [2,1], pf: 2, pa: 2, rank: 3, oppRank: 4, opponent: 'Ramesh Chand'},
+				{ player: 'Aimee Wood', result: [2,1], pf: 2, pa: 2, rank: 3, oppRank: 4, opponent: 'Romesh Chand'},
 				{ player: 'Robert Valim', result: [2,0], pf: 5, pa: 1, rank: 6, oppRank: 5, opponent: 'Xavier Silva' },
 				{ player: 'Kimberly Lucchesi', result: [0,2], pf: 2, pa: 3, rank: 5, oppRank: 4, opponent: 'Karyn Baker' },
+				{ player: 'Lori Lau', result: [0,2], pf: 1, pa: 2, rank: 5, oppRank: 3, opponent: 'Ruth Mcdougal' },
+				
+			]
+		},
+								{
+			date: '2026/11/05',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Cue Crew',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51646566',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [3,0], pf: 3, pa: 0, rank: 4, oppRank: 4, opponent: 'Mellisa Mitchell' },
+				{ player: 'Aimee Wood', result: [1,2], pf: 1, pa: 3, rank: 3, oppRank: 4, opponent: 'Grace Kennedy'},
+				{ player: 'Robert Valim', result: [2,1], pf: 5, pa: 1, rank: 6, oppRank: 3, opponent: 'Melissa Radmand' },
+				{ player: 'Ammoron Andrus', result: [2,0], pf: 4, pa: 1, rank: 6, oppRank: 7, opponent: 'Bob Randolph' },
+				{ player: 'Kimberly Lucchesi', result: [2,1], pf: 2, pa: 3, rank: 5, oppRank: 4, opponent: 'Dawn Francetich' },
+			]
+		},
+		{
+			date: '2026/11/12',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Nice Shot',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51646569',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Dean Pinckert', result: [3,0], pf: 3, pa: 0, rank: 4, oppRank: 2, opponent: 'Toby McGilvray' },
+				{ player: 'Maria Fogle', result: [3,0], pf: 2, pa: 0, rank: 3, oppRank: 3, opponent: 'Andrea Ortega-Funk'},
+				{ player: 'Robert Valim', result: [0,3], pf: 0, pa: 5, rank: 6, oppRank: 7, opponent: 'Alberto J Campos F' },
+				{ player: 'Lori Lau', result: [0,2], pf: 1, pa: 5, rank: 5, oppRank: 7, opponent: 'Cody Seegert' },
+				{ player: 'Kimberly Lucchesi', result: [2,0], pf: 3, pa: 1, rank: 4, oppRank: 4, opponent: 'David Cotto' },
+			]
+		},
+				{
+			date: '2026/11/12',
+			get linkedDate() { return linkDate(this.date, this.APALink) },
+			place: 'Jointed Cue Billiards',
+			opponent: 'Big Win Energy!',
+			APALink: 'https://league.poolplayers.com/Sacramento/match/51646571',
+			get score() { return format_score(sumMatches(this.matches)) },
+			matches: [
+				{ player: 'Ammoron Andrus', result: [1,2], pf: 4, pa: 5, rank: 6, oppRank: 6, opponent: 'Kaleo Ross' },
+				{ player: 'Maria Fogle', result: [0,3], pf: 0, pa: 2, rank: 3, oppRank: 3, opponent: 'Vincent Walker'},
+				{ player: 'Robert Valim', result: [0,2], pf: 1, pa: 3, rank: 6, oppRank: 4, opponent: 'Hasheem Whitmore' },
+				{ player: 'Lori Lau', result: [0,2], pf: 1, pa: 5, rank: 5, oppRank: 7, opponent: 'Brandon Gilham' },
+				{ player: 'Aimee Wood', result: [2,1], pf: 3, pa: 1, rank: 3, oppRank: 2, opponent: 'Antione Dunn' },
 			]
 		},
 	]
